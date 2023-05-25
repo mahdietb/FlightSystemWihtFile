@@ -2,13 +2,14 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public interface FileWriter<T> {
-    int fixSize = 30;
+    int fixSize = 20;
 
     /**
      * method for writing the file
+     *
      * @param instance instance of our object
      */
-    void writeFile(T instance);
+    void writeFile(T instance) throws IOException;
 
     /**
      * this method fix the size of every string
@@ -26,13 +27,15 @@ public interface FileWriter<T> {
 
     /**
      * this method is for reading data from our file
+     *
      * @return created instance with the data
      */
-    T readStudentFromFile();
+    T readStudentFromFile() throws IOException;
 
 
     /**
      * this method help to read strings with char method from file class
+     *
      * @param file our randomAccessFile
      * @return the string
      * @throws IOException input or output exception
@@ -46,6 +49,13 @@ public interface FileWriter<T> {
     }
 
 
+  long getByteNum(long recordNum);
+
+    void moveFilePointer(long recordNum) throws IOException;
+
+    long getNumberOfRecord() throws IOException;
+
+    void closeFile() throws IOException;
 }
 
 
