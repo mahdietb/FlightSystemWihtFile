@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class TicketFile implements FileWriter<Ticket> {
+public class TicketRecord implements FileWriter<Ticket> {
 
     private final int RECORD_SIZE = 80;
     private RandomAccessFile ticketFile;

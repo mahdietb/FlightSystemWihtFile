@@ -2,12 +2,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class UserFile implements FileWriter<User> {
+public class UserRecord implements FileWriter<User> {
 
     private final int RECORD_SIZE = 80;
     private RandomAccessFile userFile;
 
-    public UserFile(String fileName) throws FileNotFoundException {
+    public UserRecord(String fileName) throws FileNotFoundException {
         this.userFile = new RandomAccessFile(fileName, "rw");
     }
 

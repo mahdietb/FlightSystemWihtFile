@@ -1,11 +1,15 @@
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class FlightFile implements FileWriter<Flight> {
+public class FlightRecord implements FileWriter<Flight> {
 
     private final int RECORD_SIZE = 212;
     private RandomAccessFile flightFile;
 
+    public FlightRecord(RandomAccessFile flightFile) {
+        this.flightFile = flightFile;
+    }
 
     @Override
     public void writeFile(Flight flight) throws IOException {

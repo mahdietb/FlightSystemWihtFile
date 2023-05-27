@@ -1,10 +1,12 @@
+import java.io.IOException;
+
 public interface CreatedFileRequirement<T> {
-    T addObject();
+    void addObject() throws IOException;
 
     T removeObject();
 
     void creatFile(T t);
 
-    T readFile();
+    void readFile() throws IOException;
 
 }
